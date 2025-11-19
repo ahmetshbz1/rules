@@ -38,6 +38,13 @@ EXCEPTION: User-facing UI text only
 - **Validation**: Validate ALL external data (API, DB, Input) at runtime.
 - **Strictness**: No implicit types. Explicit return types required.
 
+### LOGGING_POLICY
+- `console.log`, `console.warn`, `console.error` are STRICTLY FORBIDDEN.
+- All logging must use **Winston** (or the project's logger utility) only.
+- Production code may only use: `logger.info`, `logger.warn`, `logger.error`.
+- `logger.debug` is allowed only locally and must NOT be committed.
+- Emojis are forbidden in all logs.
+
 ### NO_LOCAL_DEV_SERVER
 - Never run: bun run dev, yarn dev, npm start
 - Agent scope: Write code, analyze, prepare deployment
